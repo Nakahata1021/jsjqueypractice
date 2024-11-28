@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>アニメーション</title>
+  <link rel="stylesheet" type="text/css" href="base.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  <script>
+  $(function(){
+    // ボタンをクリックすると中央にスライド
+     $('#button').on('click', function() {
+
+        const windowWidth = $(window).width();
+        const windowHeight = $(window).height();
+
+        const buttonWidth = $(this).outerWidth();
+        const buttonHeight = $(this).outerHeight();
+
+        const centerX = (windowWidth - buttonWidth) / 2;
+        const centerY = (windowHeight - buttonHeight) / 2;
+
+        $(this).animate({
+          left: centerX,
+          top: centerY
+        }, 1200);
+      });
+  });
+  </script>
+</head>
+<body>
+  <div id="button">
+    <p>button</p>
+  </div><!-- button -->
+</body>
+</html>
